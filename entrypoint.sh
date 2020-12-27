@@ -6,7 +6,7 @@ set -e
 
 echo "REPO: $GITHUB_REPOSITORY"
 echo "ACTOR: $GITHUB_ACTOR"
-echo "NIKOLA_SITE: $GITHUB_NIKOLA_SITE"
+echo "NIKOLA_SITE: $INPUT_NIKOLA_SITE"
 
 if ! $INPUT_NIKOLA_SITE; then
     echo "No nikola site provided"
