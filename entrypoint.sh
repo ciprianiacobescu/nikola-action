@@ -6,6 +6,11 @@ set -e
 
 echo "REPO: $GITHUB_REPOSITORY"
 echo "ACTOR: $GITHUB_ACTOR"
+echo "NIKOLA_SITE: $GITHUB_NIKOLA_SITE"
+
+if $GITHUB_NIKOLA_SITE then
+    cd $GITHUB_NIKOLA_SITE
+fi
 
 echo "==> Preparing..."
 if ! $INPUT_DRY_RUN; then
