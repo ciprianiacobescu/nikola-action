@@ -1,15 +1,17 @@
 #!/bin/bash
 
 : "${INPUT_DRY_RUN:=false}"
-
+: "${INPUT_NIKOLA_SITE:=false}"
 set -e
 
 echo "REPO: $GITHUB_REPOSITORY"
 echo "ACTOR: $GITHUB_ACTOR"
 echo "NIKOLA_SITE: $GITHUB_NIKOLA_SITE"
 
-if $GITHUB_NIKOLA_SITE then
-    cd $GITHUB_NIKOLA_SITE
+if $INPUT_NIKOLA_SITE then
+
+    cd $INPUT_NIKOLA_SITE;
+    
 fi
 
 echo "==> Preparing..."
