@@ -11,3 +11,7 @@ inputs:
     description: 'Build without publishing code'
     default: false
     required: false
+  nikola_site:
+    description: 'Build folder of site'
+    default: false
+    required: false
