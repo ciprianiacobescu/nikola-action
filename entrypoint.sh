@@ -17,6 +17,8 @@ inanotherfolder(){
         echo "now in $INPUT_NIKOLA_SITE"
         src_branch="$(python -c 'import conf; print(conf.GITHUB_SOURCE_BRANCH)')"
         dest_branch="$(python -c 'import conf; print(conf.GITHUB_DEPLOY_BRANCH)')"
+        cd $incurdir;
+        echo "reverted to $incurdir"
         
         git remote add ghpages "https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
         git fetch ghpages $dest_branch
@@ -26,9 +28,7 @@ inanotherfolder(){
 
         # Override config so that ghp-import does the right thing.
         printf '\n\nGITHUB_REMOTE_NAME = "ghpages"\nGITHUB_COMMIT_SOURCE = False\n' >> conf.py
-        
-        cd $incurdir;
-        echo "reverted to $incurdir"
+
     fi
 }
 
