@@ -59,11 +59,12 @@ else
 fi
 
 buildinfolder(){
-
+    incurdir=$(pwd)
     if test $INPUT_NIKOLA_SITE = false; then
         echo "No nikola site provided"
     else
         cd $INPUT_NIKOLA_SITE;  
+        echo "Now in $(pwd)"
     fi
 
     echo "==> Building site..."
@@ -75,6 +76,7 @@ buildinfolder(){
     else
         echo "Dry-run, skipping..."
     fi
+    cd $incurdir;
 }
 
 buildinfolder
