@@ -9,7 +9,7 @@ echo "ACTOR: $GITHUB_ACTOR"
 echo "NIKOLA_SITE: $INPUT_NIKOLA_SITE"
 
 inanotherfolder(){
-    if ! $INPUT_NIKOLA_SITE; then
+    if test $INPUT_NIKOLA_SITE = false; then
         echo "No nikola site provided"
     else
         incurdir=$(pwd)
@@ -60,7 +60,7 @@ fi
 
 buildinfolder(){
 
-    if ! $INPUT_NIKOLA_SITE; then
+    if test $INPUT_NIKOLA_SITE = false; then
         echo "No nikola site provided"
     else
         cd $INPUT_NIKOLA_SITE;  
